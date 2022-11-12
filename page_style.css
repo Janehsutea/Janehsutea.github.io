@@ -1,21 +1,78 @@
 body {
   margin: 0;
   font-family: "微軟正黑體", sans-serif;
+  box-sizing: Border-box;
 }
 
-div.head_title {
-  padding: 5px;
-  background-color: LightSeaGreen;
-  font-size: 30px;
-  color: aliceblue;
+header {
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  width: 100vw;
+  padding: 0.3rem 0;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 2rem;
   text-align: center;
+  background-color: LightSeaGreen;
+  color: aliceblue;
 }
 
-div.table_head {
-  width: 60%;
+.title:hover {
+  transition: all 1s;
+  background-color: darkslateblue;
+  color: azure;
+}
+
+.menuButton {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dropDown {
+  position: fixed;
+  top: 0.7rem;
+  left: 1rem;
+  z-index: 1;
+}
+
+.menu {
+  display: none;
+  margin: 0.3rem 0;
+  padding: 1rem;
+  background-color: lightcyan;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menuButton:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.dropDown:hover .menu {
+  display: block;
+}
+
+table.info {
+  width: 1000px;
+  height: 200px;
+  margin: 10px auto;
+  font-size: 18px;
+  text-align: center;
+  border-spacing: 5px;
+}
+
+caption.info_title {
   height: 30px;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-bottom: 10px;
   padding: 10px;
   text-align: center;
   font-size: 24px;
@@ -23,88 +80,63 @@ div.table_head {
   color: aliceblue;
 }
 
-table.box {
-  width: 50%;
-  height: 200px;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  vertical-align: middle;
-  font-size: 18px;
-  text-align: center;
-}
-
-table.box th {
-  background-color: lightgrey;
+table.info th {
+  width: 100px;
   color: black;
   font-size: 20px;
+  background-color: lightgrey;
 }
-div.describebox {
-  width: 60%;
+
+.flex_area {
+  width: 1000px;
   margin: 0 auto;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: stretch;
 }
-div.cell {
+
+table.describe_table {
   flex: none;
-  width: 500px;
+  width: 490px;
+  height: auto;
+  font-size: 15px;
 }
-div.cellhead {
-  margin: 10px;
+
+caption.describe_table_title {
   padding: 10px;
-  text-align: center;
   font-size: 20px;
+  text-align: center;
   background-color: DarkSlateGray;
   color: aliceblue;
 }
 
-table.celltable {
-  width: 95%;
-  margin: auto;
-  vertical-align: middle;
-  font-size: 15px;
-}
-
-table.celltable th {
+table.describe_table th {
   height: 40px;
-  background-color: lightgrey;
-  color: black;
   font-size: 18px;
   text-align: center;
   vertical-align: middle;
+  background-color: lightgrey;
+  color: black;
 }
 
-table.celltable tr {
+table.describe_table tr {
   text-align: left;
-  vertical-align: top;
 }
 
-table.celltable td {
+table.describe_table td {
   padding: 5px;
   border-bottom: 2px solid darkslategray;
 }
 
-/* RWD */
-@media screen and (max-width: 600px) {
-  main {
+@media screen and (max-width: 1000px) {
+  table.info {
     width: 100%;
   }
-  div.head_title {
+  .flex_area {
     width: 100%;
   }
-  div.table_head {
-    width: 100%;
-  }
-  table.box {
-    width: 95%;
-  }
-  div.describebox {
-    width: 100%;
-  }
-  div.cell {
+  table.describe_table {
     width: 100%;
   }
 }
